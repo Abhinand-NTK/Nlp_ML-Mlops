@@ -22,10 +22,24 @@ def index():
 @app.route('/test',methods=['GET','POST'])
 def Postinfo():
     if request.method =='POST':
-       print("Method:-",request.method)
-       print('first_name:-',request.form['fname'])
+        print("Method:-",request.method)
+        print('first_name:-',request.form['fname'])
+        name = request.form['fname']
+        lname = request.form['lname']
+        return f'first_name : {name}, Last_name ;-{lname}'
    
     return render_template('form.html')
+
+@app.route('/Submit',methods=['GET','POST'])
+def Submit():
+    if request.method =='POST':
+        print("Method:-",request.method)
+        print('first_name:-',request.form['fname'])
+        name = request.form['fname']
+        lname = request.form['lname']
+        return f'first_name : {name}, Last_name ;-{lname}'
+    return render_template('form.html')
+
 
 
 
